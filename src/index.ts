@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
-import React from "react";
 import { render } from "ink";
 import { PortKiller } from "./PortKiller";
+import { createElement } from "react";
 
-render(React.createElement(PortKiller));
+render(createElement(PortKiller));

@@ -1,6 +1,10 @@
-# bun-react-template
+# port-killer
 
-To install dependencies:
+![Screenshot of Terminal with port-killer running](./port-killer.png)
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
 bun install
@@ -18,4 +22,11 @@ To run for production:
 bun start
 ```
 
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Build: 
+```bash
+bun run build
+```
+
+## License
+
+[MIT LICENSE](./LICENSE)
