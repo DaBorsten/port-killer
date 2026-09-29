@@ -1,0 +1,21 @@
+[package]
+name = "port-killer"
+version = "0.1.0"
+edition = "2021"
+description = "Find and kill processes by port in an interactive terminal UI"
+license = "MIT"
+repository = "https://github.com/DaBorsten/port-killer"
+readme = "README.md"
+keywords = ["port", "kill", "process", "tui", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+anyhow = "1"
+netstat2 = "0.11"
+ratatui = "0.30"
+sysinfo = { version = "0.39", default-features = false, features = ["system"] }
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
