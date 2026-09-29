@@ -1,6 +1,6 @@
 [package]
 name = "port-killer"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Find and kill processes by port in an interactive terminal UI"
 license = "MIT"
