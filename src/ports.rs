@@ -44,7 +44,7 @@ pub fn find(port: u16) -> Result<Vec<Entry>> {
     }
 
     // A full refresh also names processes we may not open, e.g. services on Windows.
-    let mut sys = System::new();
+    let mut sys = System::new().context("could not read the process list")?;
     sys.refresh_processes_specifics(ProcessesToUpdate::All, true, ProcessRefreshKind::nothing());
     for e in &mut entries {
         e.name = match sys.process(Pid::from_u32(e.pid)) {
@@ -63,7 +63,7 @@ pub fn find(port: u16) -> Result<Vec<Entry>> {
 /// Force-kills `pid` and waits up to a second for it to disappear.
 pub fn kill(pid: u32) -> Result<()> {
     let pid = Pid::from_u32(pid);
-    let mut sys = System::new();
+    let mut sys = System::new().context("could not read the process list")?;
     let refresh = |sys: &mut System| {
         sys.refresh_processes_specifics(
             ProcessesToUpdate::Some(&[pid]),
